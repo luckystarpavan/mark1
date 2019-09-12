@@ -1,0 +1,63 @@
+    1  sudo -i
+    2  yum -y update
+    3  yum install java-1.8.0-openjdk
+    4  java -version
+    6  ls -la
+    7  update-alternatives --config java   --------------- type '2'
+    8  yum install wget
+    9  wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+       ps -ef | grep jenkins 
+   12  java -jar jenkins.war --httpPort=8080
+   13  history
+   
+   ----------------------------------------------
+--------------------->reference<----------------------
+yum -y update
+yum install java-1.8.0-openjdk
+java -version
+ls -la
+update-alternatives --config java
+java -version
+find /usr/lib/jvm/java-1.8* | head -n 3
+#output----> /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.47.amzn1.x86_64/jre/lib                  #  --> paste this in vi .bash_profile
+					|
+					|
+				        \/
+
+	#JAVA_HOME =/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.47.amzn1.x86_64/jre/lib
+	#PATH=$PATH:$JAVA_HOME:$HOME/bin									#--> save the file --> :wq!
+
+echo $JAVA_HOME                                                 #--> if the above path is notreflecting you can refresh the bash_profile
+source ~/.bash_profile
+
+
+
+wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+java -jar jenkins.war --httpPort=8080
+-------------------------------------------------
+
+cat /root/.jenkins/secrets/initialAdminPassword
+
+-->username: admin           Pass:  cae59d44ff7745ef962fa81a8e169c91
+cat /var/lib/jenkins/secrets/initialAdminPassword
+or 
+cat $JENKINS_HOME/secrets/initialAdminPassword
+--------------------------------------------------
+
+******************************************************APACHE SERVER BUILD ******************************************************************
+
+yum install httpd
+mkdir apache
+cd /var/www/html/
+vi index.html
+service httpd status      # initially it will be in stoped status 
+service httpd start
+service httpd status
+
+*******************************************************Tomcat server *************************************************************************
+
+
+
+
+
+
