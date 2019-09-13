@@ -1,16 +1,18 @@
-    1  sudo -i
-    2  yum -y update
-    3  yum install java-1.8.0-openjdk
-    4  java -version
-    6  ls -la
-    7  update-alternatives --config java   --------------- type '2'
-    8  yum install wget
-    9  wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
-       ps -ef | grep jenkins 
-   12  java -jar jenkins.war --httpPort=8080
-   13  history
+**************************************************************JENKINS*************************************************888
+sudo -i
+yum -y update
+yum install java-1.8.0-openjdk
+java -version
+ls -la
+update-alternatives --config java   --------------- type '2'
+yum install wget
+wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+ps -ef | grep jenkins
+touch Jenkins‌OutputFile
+java -jar jenkins.war --httpPort=8080
+history >> Jenkins‌OutputFile
    
-   ----------------------------------------------
+----------------------------------------------
 --------------------->reference<----------------------
 yum -y update
 yum install java-1.8.0-openjdk
@@ -19,15 +21,15 @@ ls -la
 update-alternatives --config java
 java -version
 find /usr/lib/jvm/java-1.8* | head -n 3
-#output----> /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.47.amzn1.x86_64/jre/lib      #  --> paste this in vi .bash_profile
+#output----> /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.47.amzn1.x86_64/jre/lib                  #  --> paste this in vi .bash_profile
 					|
 					|
 				        \/
 
 	#JAVA_HOME =/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.47.amzn1.x86_64/jre/lib
-	#PATH=$PATH:$JAVA_HOME:$HOME/bin			#--> save the file --> :wq!
+	#PATH=$PATH:$JAVA_HOME:$HOME/bin									#--> save the file --> :wq!
 
-echo $JAVA_HOME                #--> if the above path is notreflecting you can refresh the bash_profile
+echo $JAVA_HOME                                                 #--> if the above path is notreflecting you can refresh the bash_profile
 source ~/.bash_profile
 
 
@@ -55,7 +57,6 @@ service httpd status      # take the public IP and run in port: 80
 
 ******************************************************************************** Tomcat server **********************************************************************************
 
-
 yum install java-1.8* -y
 java -version
 cd /opt
@@ -69,7 +70,7 @@ cd apache-tomcat-8.5.45
 cd bin
 chmod +x startup.sh
 chmod +x shutdown.sh
-          #ls -ltr            -----------> to check whether startup.sh and shutdown.sh have given execute permission
+                                                       #ls -ltr            -----------> to check whether startup.sh and shutdown.sh have given execute permission
 ./startup.sh
 ps -ef | grep tomcat
 cd ..
