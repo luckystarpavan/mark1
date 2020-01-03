@@ -1,0 +1,18 @@
+#########Ansible installations in Ubuntu##########
+1. using Package (Wget/curl)
+2. Using Source code
+########Ansible Architecture
+                                                                                                          Remote servers
+Host Inventory,                       ___________________                                      /
+Playbooks,        Command Cente ---> | Ansible Python API| ----SSH---> Internet--> Router --> Switch 
+Ansible Config,                      |___________________|                                     \
+Core Modules,                                                                                            Remote servers
+Custom Modules
+
+
+Note:::: The remote servers should have Python installed along with a library named simplejson in case you are using Python Version 2.5 or an earlier version.
+
+
+##################### Explanation for Host Inventory 
+a. The host inventory file determines the target machines where these plays will be executed.
+ 
